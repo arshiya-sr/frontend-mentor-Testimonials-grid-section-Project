@@ -73,6 +73,15 @@ main {
 
 .qoute {
     display: none;
+    position: absolute;
+    height: 92px;
+    opacity: 0.8;
+    left: 70%;
+    bottom: 70%;
+    transition: 0.3s;
+    width: 60px;
+    height: 60px;
+    pointer-events: none;
 }
 
 .author {
@@ -125,6 +134,7 @@ main {
 
 .purple {
     background-color: hsl(263, 55%, 52%);
+    position: relative;
 }
 
 .gray {
@@ -174,6 +184,16 @@ main {
         flex-grow: 1;
     }
 
+    .qoute {
+        display: block;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+
+        .purple:hover .qoute {
+            transform: rotate(4deg)
+        }
+    }
 }
 
 @media (min-width: 1200px) {
@@ -219,25 +239,5 @@ main {
         width: 100%;
         height: auto;
         padding-bottom: 11px;
-    }
-}
-
-@media (min-width: 1850px) {
-
-    .qoute {
-        display: block;
-        position: fixed;
-        height: 92px;
-        opacity: 0.8;
-        left: 760px;
-        top: 215px;
-        transition: 0.3s;
-    }
-
-    @media (prefers-reduced-motion: no-preference) {
-
-        .purple:hover .qoute {
-            transform: rotate(4deg)
-        }
     }
 }
