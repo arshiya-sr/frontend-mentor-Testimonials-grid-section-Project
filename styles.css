@@ -36,7 +36,7 @@ main {
 .first-section {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
     width: 100%;
     gap: 20px;
@@ -47,15 +47,17 @@ main {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    align-items: stretch;
 }
 
 .second-section {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
     width: 100%;
     gap: 20px;
+    align-self: stretch;
 }
 
 /* cards */
@@ -198,12 +200,8 @@ main {
 
 @media (min-width: 1200px) {
     main {
-        flex-direction: row;
-        align-items: flex-start;
-        height: auto;
-        max-height: none;
-        gap: 0;
-        margin: auto;
+        display: grid;
+        grid-template-columns: 3.9fr 1fr;
     }
 
     .first-section {
@@ -216,28 +214,45 @@ main {
     .second-part {
         flex-direction: row;
         flex-grow: 1;
-        gap: 0;
+        gap: 20px;
+        align-items: stretch;
+    }
+
+    .first-part>.purple {
+        flex: 3 1 0;
+    }
+
+    .first-part>.gray {
+        flex: 1 1 0;
+    }
+
+    .second-part>.darkblue {
+        flex: 3 1 0;
+    }
+
+    .second-part>.white {
+        flex: 1 1 0;
+    }
+
+    .second-section>.card {
+        flex: 1 1 0;
     }
 
     .second-section {
         flex: 1;
-        align-items: center;
+        align-items: stretch;
         justify-content: flex-start;
         width: auto;
         height: 100%;
-        max-height: 100%;
         overflow: visible;
     }
 
     .card {
         max-height: none;
-        height: auto;
     }
 
     .second-section .card {
-        flex: none;
         width: 100%;
-        height: auto;
         padding-bottom: 11px;
     }
 }
